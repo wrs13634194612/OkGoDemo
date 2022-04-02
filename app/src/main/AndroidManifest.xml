@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.OkGoDemoTwo">
-        <activity android:name=".DeleteActivity">
+        <activity android:name=".PutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

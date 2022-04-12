@@ -12,32 +12,35 @@ import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 
 
-public class AddProductActivity extends AppCompatActivity {
+public class RoomStateActivity extends AppCompatActivity {
+    String url = "https://www.mindordz.com:8181/mindor/dc/controlRoomSwitch";
 
-    String url = "https://www.mindordz.com:8181/mindor/dc/loadProduct";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_product);
+        setContentView(R.layout.activity_main);
         getData();
     }
 
+
+    /**
+     * 新参数
+     * userId 字符串
+     * room  字符串
+     * state 整形
+     */
+
     private void getData() {
-        OkGo.<String>get(url)
-                .params("userId", "minApp113988")
-                .params("productId", "zcz002")
-                .params("equipmentId", "zcz002103910")
+        OkGo.<String>put(url)
+                .params("userId", "13")
+                .params("room", "zcz002103910")
+                .params("state", "zcz002103910")
                 .execute(new com.lzy.okgo.callback.StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {
-                        Gson gson = new Gson();
-
-                        AddProductBean mAddProductBean = gson.fromJson(response.body(), AddProductBean.class);
-
-
-                        String name = mAddProductBean.getData().getEquipmentNote();
-                        Log.e("TAG", "AddActivity_onSuccess:" + response.body() + "\n" + name);
+                        DeleteBean mDeleteBean = JSONObject.parseObject(response.body(), DeleteBean.class);
+                        Log.e("TAG", "onSuccess:" + mDeleteBean);
                     }
 
                     @Override
@@ -47,6 +50,4 @@ public class AddProductActivity extends AppCompatActivity {
                     }
                 });
     }
-
-
 }

@@ -2,40 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_add_produce_data"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:background="@android:color/holo_red_dark"
-        android:text="加载要新增的产品数据" />
 
     <Button
         android:id="@+id/btn_device_data"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:background="@android:color/holo_orange_light"
+        android:layout_width="240dp"
+        android:layout_height="70dp"
         android:layout_marginTop="30dp"
-        android:text="加载设备数据" />
+        android:textSize="20sp"
+        android:text="1.获取所有数据 " />
 
-    <Button
-        android:id="@+id/btn_add_device_data"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:background="@android:color/holo_green_light"
-        android:layout_marginTop="30dp"
-        android:text="新增更新设备" />
 
     <Button
         android:id="@+id/btn_delete_device_data"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
+        android:layout_width="240dp"
+        android:layout_height="70dp"
         android:layout_marginTop="30dp"
-        android:background="@android:color/holo_blue_bright"
-        android:text="移除设备" />
+        android:textSize="20sp"
+        android:text="2.删除设备" />
 
 
+    <Button
+        android:id="@+id/btn_add_produce_data"
+        android:layout_width="240dp"
+        android:layout_height="70dp"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:text="3.获取要新增的设备" />
+
+    <Button
+        android:id="@+id/btn_add_device_data"
+        android:layout_width="240dp"
+        android:layout_height="70dp"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:text="4.新增设备" />
 
 </LinearLayout>

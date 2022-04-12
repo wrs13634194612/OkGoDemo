@@ -14,7 +14,7 @@ public class DeviceDataBean {
 
     private int code;
     private String message;
-    private List<DataBean> data;
+    private List<Device> data;
 
     public int getCode() {
         return code;
@@ -32,11 +32,11 @@ public class DeviceDataBean {
         this.message = message;
     }
 
-    public List<DataBean> getData() {
+    public List<Device> getData() {
         return data;
     }
 
-    public void setData(List<DataBean> data) {
+    public void setData(List<Device> data) {
         this.data = data;
     }
 

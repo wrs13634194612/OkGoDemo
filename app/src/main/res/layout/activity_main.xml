@@ -8,37 +8,52 @@
 
 
     <Button
-        android:id="@+id/btn_device_data"
+        android:id="@+id/btn_room_state"
         android:layout_width="240dp"
         android:layout_height="70dp"
         android:layout_marginTop="30dp"
         android:textSize="20sp"
-        android:text="1.获取所有数据 " />
+        android:text="0.首页房间全开全关 " />
 
 
     <Button
-        android:id="@+id/btn_delete_device_data"
+        android:id="@+id/btn_controller_red"
         android:layout_width="240dp"
         android:layout_height="70dp"
         android:layout_marginTop="30dp"
         android:textSize="20sp"
-        android:text="2.删除设备" />
+        android:text="1.遥控器-添加遥控-选择红外设备接口" />
 
 
     <Button
-        android:id="@+id/btn_add_produce_data"
+        android:id="@+id/btn_search_device"
         android:layout_width="240dp"
         android:layout_height="70dp"
         android:textSize="20sp"
         android:layout_marginTop="30dp"
-        android:text="3.获取要新增的设备" />
+        android:text="2.查找模式-详情-内部设备" />
 
     <Button
-        android:id="@+id/btn_add_device_data"
+        android:id="@+id/btn_update"
         android:layout_width="240dp"
         android:layout_height="70dp"
         android:textSize="20sp"
         android:layout_marginTop="30dp"
-        android:text="4.新增设备" />
+        android:text="3.更新模式" />
 
+    <Button
+        android:id="@+id/btn_timer_state"
+        android:layout_width="240dp"
+        android:layout_height="70dp"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:text="4.获取定时执行状态" />
+
+    <Button
+        android:id="@+id/btn_search_device_num"
+        android:layout_width="240dp"
+        android:layout_height="70dp"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:text="5.查询设备数量" />
 </LinearLayout>

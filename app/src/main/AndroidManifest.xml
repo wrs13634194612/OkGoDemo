@@ -32,6 +32,20 @@
         <activity android:name=".AddDeviceDataActivity" />
 
 
+
+        <!--     0.首页房间全开全关     -->
+        <activity android:name=".RoomStateActivity" />
+        <!--     1.遥控器-添加遥控-选择红外设备接口      -->
+        <activity android:name=".ControllerRedActivity" />
+        <!--     2.查找模式-详情-内部设备    -->
+        <activity android:name=".SearchDeviceActivity" />
+        <!--     3.更新模式       -->
+        <activity android:name=".UpdateActivity" />
+        <!--     4.获取定时执行状态     -->
+        <activity android:name=".TimerStateActivity" />
+        <!--     5.查询设备数量      -->
+        <activity android:name=".SearchDeviceNumActivity" />
+
     </application>
 
 </manifest>

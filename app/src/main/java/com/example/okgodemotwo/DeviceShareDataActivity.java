@@ -20,13 +20,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class DeviceDataActivity extends AppCompatActivity {
+public class DeviceShareDataActivity extends AppCompatActivity {
     private String url = "https://www.mindordz.com:8181/mindor/dc/loadDevices";
     private RecyclerView gv_devices;
     private OnlineDeviceListAdapter mAdapter;
-
-
     private TextView tv_number;
+
 
     private Handler mHandler = new Handler(new Handler.Callback() {
         @Override
@@ -37,12 +36,11 @@ public class DeviceDataActivity extends AppCompatActivity {
                 DeviceDataBean mDeviceDataBean = gson.fromJson(post, DeviceDataBean.class);
                 List<Device> mDevices = mDeviceDataBean.getData();
                 Log.e("TAG", "AddActivity_onSuccess:" + post + "\n" + mDevices);
+                tv_number.setText("分享条目数:"+mDevices.size());
 
 
-                tv_number.setText("总条目数:"+mDevices.size());
-
-                mAdapter = new OnlineDeviceListAdapter(DeviceDataActivity.this, mDevices);
-                gv_devices.setLayoutManager(new GridLayoutManager(DeviceDataActivity.this, 4));
+                mAdapter = new OnlineDeviceListAdapter(DeviceShareDataActivity.this, mDevices);
+                gv_devices.setLayoutManager(new GridLayoutManager(DeviceShareDataActivity.this, 4));
                 gv_devices.setAdapter(mAdapter);
             }
             return false;
@@ -59,17 +57,17 @@ public class DeviceDataActivity extends AppCompatActivity {
         gv_devices = findViewById(R.id.rv_online_devices);
 
 
-
         getData();
     }
 
     private void getData() {
         OkGo.<String>get(url)
                 .params("userId", "minApp113043")
+                .params("type", "share")
                 .execute(new com.lzy.okgo.callback.StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {
-                        Log.e("TAG", "onError:" + response.body());
+                        Log.e("TAG", "onSuccess:" + response.body());
                         Message msg = new Message();
                         msg.what = 100;
                         msg.obj = response.body();

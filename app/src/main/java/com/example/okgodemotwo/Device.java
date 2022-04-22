@@ -248,9 +248,9 @@ public class Device implements Serializable {
     }
 
     public String getEquipmentState() {
-        if (BuildConfig.DEBUG) {
+      /*  if (BuildConfig.DEBUG) {
             return "2";
-        }
+        }*/
         return equipmentState;
     }
 

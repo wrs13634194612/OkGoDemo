@@ -40,7 +40,7 @@ public class RoomStateActivity extends AppCompatActivity {
         OkGo.<String>put(url)
                 .params("userId", "minApp113988")
                 .params("room", "客厅")
-                .params("state", 0)
+                .params("state", 1)
                 .execute(new com.lzy.okgo.callback.StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {

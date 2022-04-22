@@ -17,7 +17,11 @@ package com.example.okgodemotwo;
 public class SearchDeviceNumActivity extends AppCompatActivity {
     String url = "https://www.mindordz.com:8181/mindor/dc/getDeviceCount";
 
-
+/**
+ .com/wanYe/WanyeApiProduct_equipmentStatistical 旧
+ http://www.mindordz.com:8381/mindor/dc/getDeviceCountl 新
+ 请求方式:GET
+ * */
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

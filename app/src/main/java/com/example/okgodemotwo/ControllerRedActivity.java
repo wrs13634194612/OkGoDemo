@@ -16,7 +16,15 @@ package com.example.okgodemotwo;
 public class ControllerRedActivity extends AppCompatActivity {
     String url = "https://www.mindordz.com:8181/mindor/dc/getIrEquipment";
 
+    /**
+     红外设备接口
 
+     http://www.mindordz.com/wanYe/WanYeApiInfrared_selectInfrared_eq 旧
+     https://www.mindordz.com:8181/mindor/dc/getIrEquipment 新
+     请求方式:GET
+     新参数
+     userId 字符串
+     */
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

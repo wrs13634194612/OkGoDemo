@@ -33,8 +33,18 @@ public class OnlineDeviceListAdapter extends BaseRecyclerViewAdapter<OnlineDevic
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_online_device, null, false);
         ViewHolder holder = new ViewHolder(itemView);
-        holder.tv_name = itemView.findViewById(R.id.tv_name);
+        holder.tv_item_share = itemView.findViewById(R.id.tv_item_share);
+        holder.tv_item_name    = itemView.findViewById(R.id.tv_item_name);
+        holder.tv_item_state    = itemView.findViewById(R.id.tv_item_state);
+
+
+
+
         holder.img_icon = itemView.findViewById(R.id.img_icon);
+
+
+
+
         return holder;
     }
 
@@ -46,8 +56,13 @@ public class OnlineDeviceListAdapter extends BaseRecyclerViewAdapter<OnlineDevic
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
-        holder.tv_name.setText(mDevices.get(position).getEquipmentNote());
-        holder.tv_name.setOnClickListener(new View.OnClickListener() {
+        holder.tv_item_name.setText(mDevices.get(position).getEquipmentNote());
+
+        holder.tv_item_share.setText(""+mDevices.get(position).getShare());
+        holder.tv_item_state.setText(mDevices.get(position).getEquipmentState());
+
+
+        holder.tv_item_name.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -61,7 +76,7 @@ public class OnlineDeviceListAdapter extends BaseRecyclerViewAdapter<OnlineDevic
 
 
         public ImageView img_icon;
-        public TextView tv_name;
+        public TextView tv_item_share,tv_item_name,tv_item_state;
 
         public ViewHolder(View itemView) {
             super(itemView);

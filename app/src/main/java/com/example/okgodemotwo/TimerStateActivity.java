@@ -1,16 +1,14 @@
 package com.example.okgodemotwo;
 
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-        import androidx.annotation.Nullable;
-        import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
 
-        import android.os.Bundle;
-        import android.util.Log;
-
-        import com.alibaba.fastjson.JSONObject;
-        import com.lzy.okgo.OkGo;
-
+import com.alibaba.fastjson.JSONObject;
+import com.lzy.okgo.OkGo;
 
 
 public class TimerStateActivity extends AppCompatActivity {
@@ -23,6 +21,16 @@ public class TimerStateActivity extends AppCompatActivity {
         getData();
     }
 
+    /**
+     定时执行状态
+     http://www.mindordz.com/wanYe/WanyeApiTiming_homePageSwt 旧
+
+     https://www.mindordz.com:8181/mindor/time/getTimeState 新
+     请求方式:GET
+     新参数
+     * */
+
+
     private void getData() {
         OkGo.<String>get(url)
                 .params("equipmentId", "3c6105d076c1")
@@ -31,7 +39,7 @@ public class TimerStateActivity extends AppCompatActivity {
                 .execute(new com.lzy.okgo.callback.StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {
-                    ///    ShareReceiveBean mShareReceiveBean = JSONObject.parseObject(response.body(), ShareReceiveBean.class);
+                        ///    ShareReceiveBean mShareReceiveBean = JSONObject.parseObject(response.body(), ShareReceiveBean.class);
                         Log.e("TAG", "AddActivity_onSuccess:" + response.body());
                     }
 

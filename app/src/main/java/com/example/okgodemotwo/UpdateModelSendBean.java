@@ -39,7 +39,7 @@ public class UpdateModelSendBean {
     private String stateList;
     private String equipmentModelEndTime;
     private String userId;
-    private List<EquipmentDatasBean> equipmentDatas;
+    private List<Device> equipmentDatas;
 
     public String getEquipmentModelRepeat() {
         return equipmentModelRepeat;
@@ -161,11 +161,11 @@ public class UpdateModelSendBean {
         this.userId = userId;
     }
 
-    public List<EquipmentDatasBean> getEquipmentDatas() {
+    public List<Device> getEquipmentDatas() {
         return equipmentDatas;
     }
 
-    public void setEquipmentDatas(List<EquipmentDatasBean> equipmentDatas) {
+    public void setEquipmentDatas(List<Device> equipmentDatas) {
         this.equipmentDatas = equipmentDatas;
     }
 
@@ -196,7 +196,7 @@ public class UpdateModelSendBean {
 
         private String equipmentType;
         private String isOn;
-        private int equipmentModelState;
+        private String equipmentModelState;
         private int share;
         private boolean isSelected;
         private String productId;
@@ -232,11 +232,11 @@ public class UpdateModelSendBean {
             this.isOn = isOn;
         }
 
-        public int getEquipmentModelState() {
+        public String getEquipmentModelState() {
             return equipmentModelState;
         }
 
-        public void setEquipmentModelState(int equipmentModelState) {
+        public void setEquipmentModelState(String equipmentModelState) {
             this.equipmentModelState = equipmentModelState;
         }
 

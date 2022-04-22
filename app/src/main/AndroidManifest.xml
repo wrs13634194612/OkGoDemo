@@ -21,9 +21,10 @@
             </intent-filter>
         </activity>
 
-
         <!--     1.获取所有数据     -->
         <activity android:name=".DeviceDataActivity" />
+        <!--     1.获取Share所有数据     -->
+        <activity android:name=".DeviceShareDataActivity" />
         <!--     2.删除设备      -->
         <activity android:name=".DeleteProductActivity" />
         <!--     3.获取要新增的设备    -->
@@ -32,15 +33,20 @@
         <activity android:name=".AddDeviceDataActivity" />
 
 
-
+        <!--     0.首页房间获取    -->
+        <activity android:name=".RoomActivity" />
         <!--     0.首页房间全开全关     -->
+
         <activity android:name=".RoomStateActivity" />
+
         <!--     1.遥控器-添加遥控-选择红外设备接口      -->
         <activity android:name=".ControllerRedActivity" />
         <!--     2.查找模式-详情-内部设备    -->
         <activity android:name=".SearchDeviceActivity" />
         <!--     3.更新模式       -->
         <activity android:name=".UpdateActivity" />
+        <activity android:name=".UpdateActivity2" />
+
         <!--     4.获取定时执行状态     -->
         <activity android:name=".TimerStateActivity" />
         <!--     5.查询设备数量      -->

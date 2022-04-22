@@ -5,7 +5,13 @@
     android:background="@android:color/white"
     android:gravity="center_horizontal"
     android:orientation="vertical">
-
+    <Button
+        android:id="@+id/btn_room_num"
+        android:layout_width="240dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:text="-1.获取首页房间 " />
 
     <Button
         android:id="@+id/btn_room_state"

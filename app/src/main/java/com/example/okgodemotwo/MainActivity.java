@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button btn_room_num = findViewById(R.id.btn_room_num);
+
 
         Button btn_room_state = findViewById(R.id.btn_room_state);
         Button btn_controller_red = findViewById(R.id.btn_controller_red);
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn_timer_state = findViewById(R.id.btn_timer_state);
         Button btn_search_device_num = findViewById(R.id.btn_search_device_num);
 
-
+        btn_room_num.setBackgroundColor(Color.rgb(0,18,100));
 
         btn_room_state.setBackgroundColor(Color.RED);
         btn_controller_red.setBackgroundColor(Color.GRAY);
@@ -41,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
          TimerStateActivity		获取定时执行状态
          SearchDeviceNumActivity		查询设备数量
          * */
+
+        btn_room_num.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RoomActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_room_state.setOnClickListener(new View.OnClickListener() {
             @Override

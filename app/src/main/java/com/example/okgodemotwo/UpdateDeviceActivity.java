@@ -13,7 +13,6 @@ import com.lzy.okgo.OkGo;
 
 
 public class UpdateDeviceActivity extends AppCompatActivity {
-    String url2 = "http://www.mindordz.com:8381/mindor/dc/operateDevices";
     String url = "https://www.mindordz.com:8181/mindor/shc/createDeviceShare";
 
 

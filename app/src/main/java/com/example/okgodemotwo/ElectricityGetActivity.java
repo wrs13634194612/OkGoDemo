@@ -1,5 +1,6 @@
 package com.example.okgodemotwo;
 
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -20,19 +21,31 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 
-public class RoomActivity extends AppCompatActivity {
+public class ElectricityGetActivity extends AppCompatActivity {
 
-    private String url = "http://tt.mindordz.com:8381/mindor/dc/getDeviceRoom";
+    private String url = "http://tt.mindordz.com:8381/mindor/ft/getByAppliance";
     private RecyclerView gv_devices;
     private TextView tv_number;
     private RoomAdapter mAdapter;
+
+    /**
+     获取家电保护数据
+     接口: http://www.mindordz.com:8381/mindor/ft/getByAppliance
+     请求方式: GET
+     测试(KEY-VALUE格式):
+     {
+     equipmentId:"zcz001100112"
+     }
+
+     接口新
+     * */
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_room);
+        setContentView(R.layout.activity_test);
 
         tv_number = findViewById(R.id.tv_number);
 
@@ -44,16 +57,13 @@ public class RoomActivity extends AppCompatActivity {
 
     private void getData() {
         OkGo.<String>get(url)
-                .params("userId", "minApp113043")
+                .params("equipmentId", "zcz002105405")
                 .execute(new com.lzy.okgo.callback.StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {
                         // ShareReceiveBean mShareReceiveBean = JSONObject.parseObject(response.body(), ShareReceiveBean.class);
                         Log.e("TAG", "AddActivity_onSuccess:" + response.body());
-                        Message msg = new Message();
-                        msg.what = 100;
-                        msg.obj = response.body();
-                        mHandler.sendMessage(msg);
+
                     }
 
                     @Override
@@ -64,38 +74,17 @@ public class RoomActivity extends AppCompatActivity {
                 });
     }
 
-    private Handler mHandler = new Handler(new Handler.Callback() {
-        @Override
-        public boolean handleMessage(@NonNull Message message) {
-            if (message.what == 100) {
-                String post = (String) message.obj;
-                Gson gson = new Gson();
-                RoomNumBean mRoomNumBean = gson.fromJson(post, RoomNumBean.class);
-
-
-                List<RoomNumBean.DataBean> mDevices = new ArrayList<>();
-                List<RoomNumBean.DataBean> mDevices2 = new ArrayList<>();
-                mDevices.addAll(mRoomNumBean.getData());
-                for (int i = 0; i < mDevices.size(); i++) {
-                    if (!mDevices.get(i).getList().isEmpty()) {
-                        mDevices2.add(mDevices.get(i));
-                    }
-                }
-                Log.e("TAG", "AddActivity_onSuccess:" + mDevices + "\t" + mDevices2);
-
-
-                tv_number.setText("分享条目数:" + mDevices2.size());
-
-
-                mAdapter = new RoomAdapter(RoomActivity.this, mDevices2);
-                gv_devices.setLayoutManager(new GridLayoutManager(RoomActivity.this, 2));
-                gv_devices.setAdapter(mAdapter);
-
-
-            }
-            return false;
-        }
-    });
-
+    /**  zcz002105405
+     {
+     "code":200,
+     "data":{
+     "equipmentId":"3c6105d076c1",
+     "delay":10,
+     "standbyPower":15,
+     "status":1
+     },
+     "message":"查询成功"
+     }
+     * */
 
 }

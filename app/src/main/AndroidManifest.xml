@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OkGoDemoTwo">
-        <activity android:name=".MainActivity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,16 +21,20 @@
             </intent-filter>
         </activity>
 
-        <!--     1.获取所有数据     -->
+        <!--     0.获取所有数据     -->
         <activity android:name=".DeviceDataActivity" />
         <!--     1.获取Share所有数据     -->
         <activity android:name=".DeviceShareDataActivity" />
-        <!--     2.删除设备      -->
-        <activity android:name=".DeleteProductActivity" />
-        <!--     3.获取要新增的设备    -->
+        <!--     2.获取要新增的设备    -->
         <activity android:name=".AddProductActivity" />
-        <!--     4.新增设备       -->
+        <!--     3.新增设备       -->
         <activity android:name=".AddDeviceDataActivity" />
+        <!--     4.删除设备      -->
+        <activity android:name=".DeleteProductActivity" />
+
+        <!--     4.汇总新增设备      -->
+        <activity android:name=".AddUpdateActivity" />
+
 
 
         <!--     0.首页房间获取    -->
@@ -51,6 +55,19 @@
         <activity android:name=".TimerStateActivity" />
         <!--     5.查询设备数量      -->
         <activity android:name=".SearchDeviceNumActivity" />
+
+        <!--    家电保护    -->
+        <activity android:name=".ElectricityGetActivity" />
+        <activity android:name=".ElectricityUpdateActivity" />
+        <activity android:name=".ElectricityDeleteActivity" />
+
+        <!--    报警    -->
+        <activity android:name=".WarnGetActivity" />
+        <activity android:name=".WarnUpdateActivity" />
+
+        <!--    获取产品    -->
+        <activity android:name=".AddActivity" />
+
 
     </application>
 

@@ -31,6 +31,11 @@ public class SearchDeviceNumActivity extends AppCompatActivity {
     }
 
     private void getData() {
+
+        int a=7;
+
+        String b = String.valueOf(a);
+
         OkGo.<String>get(url)
                 .params("userId", "minApp113043")
                 .execute(new com.lzy.okgo.callback.StringCallback() {

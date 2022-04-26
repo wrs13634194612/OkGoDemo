@@ -13,9 +13,7 @@ import com.lzy.okgo.OkGo;
 
 
 public class AddDeviceDataActivity extends AppCompatActivity {
-
-    String url = "https://www.mindordz.com:8181/mindor/dc/operateDevices";
-
+    private String url = "http://tt.mindordz.com:8381/mindor/dc/operateDevices";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,14 +24,16 @@ public class AddDeviceDataActivity extends AppCompatActivity {
 
     private void getData() {
         SendDeviceBean mSendDeviceBean = new SendDeviceBean();
-        mSendDeviceBean.setEquipmentId("zcz002103910");
-        mSendDeviceBean.setUserId("minApp113988");
+        mSendDeviceBean.setEquipmentId("zcz002105405");
+        mSendDeviceBean.setUserId("minApp113043");
         mSendDeviceBean.setProductId("zcz002");
-        mSendDeviceBean.setEquipmentNote("一氧化碳(co)");
-        mSendDeviceBean.setEquipmentRoom("客厅");
-        mSendDeviceBean.setEquipmentLabel("客厅,主卧,次卧,卧室,厨房,阳台,洗手间");
+        mSendDeviceBean.setEquipmentNote("一氧化碳3(co)");
+        mSendDeviceBean.setEquipmentRoom("洗手间");
+        mSendDeviceBean.setEquipmentLabel("");
         mSendDeviceBean.setButNames("按键一");
         mSendDeviceBean.setEquipmentType("WIFI");
+
+
 
         Gson gson = new Gson();
         String jsonString = gson.toJson(mSendDeviceBean);

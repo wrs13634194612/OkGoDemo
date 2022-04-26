@@ -5,57 +5,63 @@
     android:background="@android:color/white"
     android:gravity="center_horizontal"
     android:orientation="vertical">
+
+
     <Button
-        android:id="@+id/btn_room_num"
+        android:id="@+id/btn_electricity_get"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:textSize="20sp"
-        android:text="-1.获取首页房间 " />
+        android:text="0.家电保护获取i " />
+
 
     <Button
-        android:id="@+id/btn_room_state"
+        android:id="@+id/btn_electricity_update"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:textSize="20sp"
-        android:text="0.首页房间全开全关 " />
+        android:text="1.家电保护更新" />
 
 
     <Button
-        android:id="@+id/btn_controller_red"
+        android:id="@+id/btn_electricity_delete"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="2.家电保护删除" />
+
+    <Button
+        android:id="@+id/btn_warn_get"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:textSize="20sp"
-        android:text="1.遥控器-添加遥控-选择红外设备接口" />
+        android:text="0.报警获取i " />
 
 
     <Button
-        android:id="@+id/btn_search_device"
+        android:id="@+id/btn_warn_update"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:text="2.查找模式-详情-内部设备" />
+        android:textSize="20sp"
+        android:text="1.报警更新" />
+
 
     <Button
-        android:id="@+id/btn_update"
+        android:id="@+id/btn_warn_delete"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:text="3.更新模式" />
+        android:text="2.报警删除" />
 
     <Button
-        android:id="@+id/btn_timer_state"
+        android:id="@+id/btn_product_get"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:text="4.获取定时执行状态" />
+        android:text="0.获取产品" />
 
-    <Button
-        android:id="@+id/btn_search_device_num"
-        android:layout_width="240dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:text="5.查询设备数量" />
 </LinearLayout>

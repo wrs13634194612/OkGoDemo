@@ -1,37 +1,38 @@
 package com.example.okgodemotwo;
 
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.annotation.Nullable;
+        import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.util.Log;
+        import android.os.Bundle;
+        import android.util.Log;
 
-import com.alibaba.fastjson.JSONObject;
-import com.google.gson.Gson;
-import com.lzy.okgo.OkGo;
+        import com.alibaba.fastjson.JSONObject;
+        import com.google.gson.Gson;
+        import com.lzy.okgo.OkGo;
 
 
-public class DeleteProductActivity extends AppCompatActivity {
-    private String url = "http://tt.mindordz.com:8381/mindor/dc/deleteDevices";
+public class WarnDeleteActivity extends AppCompatActivity {
+
+    private String url = "http://tt.mindordz.com:8381/mindor/ft/deleteByHummer";
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_product);
+        setContentView(R.layout.activity_test);
         getData();
     }
+
+
 
     private void getData() {
         OkGo.<String>delete(url)
                 .params("equipmentId", "zcz002105405")
-                .params("userId", "minApp113043")
                 .execute(new com.lzy.okgo.callback.StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {
-                        DeleteBean mDeleteBean = JSONObject.parseObject(response.body(), DeleteBean.class);
-                        Log.e("TAG", "onSuccess:" + response.body() + "\n" + mDeleteBean.getMessage());
+                        Log.e("TAG", "onSuccess:" + response.body());
                     }
 
                     @Override
@@ -41,4 +42,8 @@ public class DeleteProductActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    /**
+
+     *  */
 }

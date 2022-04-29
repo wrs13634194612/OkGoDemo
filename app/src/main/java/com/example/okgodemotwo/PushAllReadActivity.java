@@ -8,11 +8,14 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
+import com.lzy.okgo.request.base.Request;
 
 
-public class TimerStateActivity extends AppCompatActivity {
-    String url = "https://www.mindordz.com:8181/mindor/time/getTimeState";
+public class PushAllReadActivity extends AppCompatActivity {
+    private String url = "http://192.168.101.9:8881/api/msg/updateAccountId";
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,26 +24,15 @@ public class TimerStateActivity extends AppCompatActivity {
         getData();
     }
 
-    /**
-     定时执行状态
-     http://www.mindordz.com/wanYe/WanyeApiTiming_homePageSwt 旧
-
-     https://www.mindordz.com:8181/mindor/time/getTimeState 新
-     请求方式:GET
-     新参数
-     * */
-
 
     private void getData() {
-        OkGo.<String>get(url)
-                .params("equipmentId", "zcz002103910")
-                .params("productId", "zcz002")
-                .params("userId", "minApp113043")
+        OkGo.<String>put(url)
+                .params("accountId", "minApp108881")
+                .params("read", "1")
                 .execute(new com.lzy.okgo.callback.StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {
-                        ///    ShareReceiveBean mShareReceiveBean = JSONObject.parseObject(response.body(), ShareReceiveBean.class);
-                        Log.e("TAG", "AddActivity_onSuccess:" + response.body());
+                        Log.e("TAG", "onSuccess:" + response.body());
                     }
 
                     @Override
@@ -48,8 +40,17 @@ public class TimerStateActivity extends AppCompatActivity {
                         super.onError(response);
                         Log.e("TAG", "onError:" + response);
                     }
+
+                    @Override
+                    public void onStart(Request<String, ? extends Request> request) {
+                        super.onStart(request);
+                        Log.e("TAG", "onStart:" + request);
+
+                    }
                 });
     }
-
-
 }
+
+/**
+ {"message":"操作成功","code":200}
+* */

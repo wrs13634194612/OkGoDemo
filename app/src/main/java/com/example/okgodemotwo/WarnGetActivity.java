@@ -51,7 +51,7 @@ public class WarnGetActivity extends AppCompatActivity {
 
     private void getData() {
         OkGo.<String>get(url)
-                .params("equipmentId", "zcz002105405")
+                .params("equipmentId", "zcz002103910")
                 .execute(new com.lzy.okgo.callback.StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {

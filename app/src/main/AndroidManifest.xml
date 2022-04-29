@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OkGoDemoTwo">
-        <activity android:name=".HomeActivity">
+        <activity android:name=".PushAllActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,8 +34,6 @@
 
         <!--     4.汇总新增设备      -->
         <activity android:name=".AddUpdateActivity" />
-
-
 
         <!--     0.首页房间获取    -->
         <activity android:name=".RoomActivity" />
@@ -68,6 +66,17 @@
         <!--    获取产品    -->
         <activity android:name=".AddActivity" />
 
+
+        <!--     0.获取消息列表     -->
+        <activity android:name=".PushGetActivity" />
+        <!--     1.更新消息ID状态_单消息已读     -->
+        <activity android:name=".PushSingleReadActivity" />
+        <!--     2.更新消息账号ID状态_全部消息已读    -->
+        <activity android:name=".PushAllReadActivity" />
+        <!--     3.删除消息ID_单消息       -->
+        <activity android:name=".PushSingleDeleteActivity" />
+        <!--     4.删除消息账号ID_所有账号消息      -->
+        <activity android:name=".PushAllDeleteActivity" />
 
     </application>
 

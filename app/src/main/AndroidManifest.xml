@@ -77,6 +77,11 @@
         <activity android:name=".PushSingleDeleteActivity" />
         <!--     4.删除消息账号ID_所有账号消息      -->
         <activity android:name=".PushAllDeleteActivity" />
+        <!--    5.发送信息    -->
+        <activity android:name=".PushSendMsgActivity" />
+
+        <!--    6.json处理    -->
+        <activity android:name=".PushJsonActivity" />
 
     </application>
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_first_connect"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:text="0.第一次连接解析" />
+
+
+    <Button
+        android:id="@+id/btn_push_other_share"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:text="1.其他人分享给我的解析" />
+
+
+
+
+</LinearLayout>

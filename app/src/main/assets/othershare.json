@@ -1,0 +1,10 @@
+{
+    "badge":1,
+    "alert":{
+        "title":"分享消息",
+        "body":"你的好友1向你分享1台设备"
+    },
+    "sound":"default",
+    "userinfo":"{\"msg\":\"你的好友用户：null向您分享了1个设备,点击确认\",\"equipments\":\"[{\\\"equipmentNote\\\":\\\"智能插座\\\",\\\"productId\\\":\\\"zcz001\\\",\\\"equipmentId\\\":\\\"zcz001101027\\\"}]\",\"messageId\":\"a7f0fb9ddb0c4f6fb3b56be6b114\",\"model\":\"accountShare\",\"shareId\":\"minApp113988\",\"id\":133.0}"
+}
+

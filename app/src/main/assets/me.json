@@ -1,0 +1,9 @@
+{
+  "badge":24,
+  "alert":{
+    "title":"分享消息",
+    "body":"你的好友1向你分享1台设备"
+  },
+  "sound":"default",
+  "userinfo":"{\"msg\":\"您的好友:1共享的1个设备已被移除\",\"messageId\":\"70acd6e79f374449a20bd1ec5101\",\"model\":\"rmShare\",\"id\":333.0,\"userId\":\"minApp113043\"}"
+}

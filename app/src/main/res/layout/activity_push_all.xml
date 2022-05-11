@@ -44,5 +44,18 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:text="4.删除消息账号ID_所有账号消息" />
+    <Button
+        android:id="@+id/btn_push_send_msg"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="5.发送消息" />
+
+    <Button
+        android:id="@+id/btn_push_json"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="6.JSON处理" />
 
 </LinearLayout>

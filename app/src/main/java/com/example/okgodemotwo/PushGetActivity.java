@@ -1,31 +1,67 @@
 package com.example.okgodemotwo;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.request.base.Request;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class PushGetActivity extends AppCompatActivity {
-    private String url = "http://192.168.101.9:8881/api/msg/getAccountId";
+    private String msg_get_url = "http://push.mindordz.com:8881/api/msg/getAccountId";
+
+    List<PushSocketAllBean.DataBean.ListBean> list;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+
+
         getData();
     }
 
+
+    private Handler mHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message message) {
+            if (message.what == 402) {
+                String post = (String) message.obj;
+                Gson gson = new Gson();
+                PushSocketAllBean mPushSocketAllBean = gson.fromJson(post, PushSocketAllBean.class);
+
+                list = new ArrayList<>();
+                list.addAll(mPushSocketAllBean.getData().getList());
+
+                Log.e("TAG", "onSuccess:" + mPushSocketAllBean+list);
+
+            }
+            return false;
+        }
+    });
+
     private void getData() {
-        OkGo.<String>get(url)
-                .params("accountId", "minApp108881")
+        OkGo.<String>get(msg_get_url)
+                .params("accountId", "minApp113043")
                 .execute(new com.lzy.okgo.callback.StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {
                         Log.e("TAG", "AddActivity_onSuccess:" + response.body());
+                        Message msg = new Message();
+                        msg.what = 402;
+                        msg.obj = response.body();
+                        mHandler.sendMessage(msg);
+
                     }
 
                     @Override

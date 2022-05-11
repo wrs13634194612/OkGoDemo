@@ -7,30 +7,37 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
-import com.lzy.okgo.request.base.Request;
 
 
-public class PushSingleReadActivity extends AppCompatActivity {
+public class PushSendMsgActivity extends AppCompatActivity {
+    private String url2 = "http://192.168.101.9:8881/api/push/sendNotification";
 
-    private String msg_read_url = "http://push.mindordz.com:8881/api/msg/updateUUID";
 
-    // 81588ea5355c4fd697b052661096
-
+    private String url ="http://192.168.101.227:8881/api/push/sendNotification";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        getData();
+        getDataPush();
     }
 
+    private void getDataPush() {
+        PushMsgDataBean mPushMsgDataBean = new PushMsgDataBean();
+        mPushMsgDataBean.setPlatform("android");
+        mPushMsgDataBean.setAccountId("minApp113988");
+        mPushMsgDataBean.setSound("default");
 
-    private void getData() {
-        OkGo.<String>put(msg_read_url)
-                .params("uuid", "81588ea5355c4fd697b052661096")
-                .params("read", 1)
+        mPushMsgDataBean.setType("alert");
+
+//        mPushMsgDataBean.setStatus(true);
+//        mPushMsgDataBean.setMessageType("share");
+        mPushMsgDataBean.setMessageContent("{\"msg\":\"请求授权信息\",\"model\":\"accountShare\"}");
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(mPushMsgDataBean);
+        OkGo.<String>post(url)
+                .upJson(jsonString)
                 .execute(new com.lzy.okgo.callback.StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {
@@ -42,17 +49,8 @@ public class PushSingleReadActivity extends AppCompatActivity {
                         super.onError(response);
                         Log.e("TAG", "onError:" + response);
                     }
-
-                    @Override
-                    public void onStart(Request<String, ? extends Request> request) {
-                        super.onStart(request);
-                        Log.e("TAG", "onStart:" + request);
-
-                    }
                 });
     }
-}
 
-/**
- {"message":"操作成功","code":200}
-*  */
+
+}

@@ -57,5 +57,10 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:text="6.JSON处理" />
-
+    <Button
+        android:id="@+id/btn_power_json"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="7.Power电量" />
 </LinearLayout>

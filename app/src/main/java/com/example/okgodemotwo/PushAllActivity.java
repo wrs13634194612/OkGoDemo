@@ -27,12 +27,19 @@ public class PushAllActivity extends AppCompatActivity {
         Button btn_push_json = findViewById(R.id.btn_push_json);
 
 
+                Button btn_power_json = findViewById(R.id.btn_power_json);
+
+
         btn_push_get.setBackgroundColor(Color.RED);
         btn_push_single_read.setBackgroundColor(Color.GRAY);
         btn_push_all_read.setBackgroundColor(Color.GREEN);
+
         btn_push_single_delete.setBackgroundColor(Color.BLUE);
         btn_push_all_delete.setBackgroundColor(Color.rgb(66, 8, 0));
         btn_push_json.setBackgroundColor(Color.MAGENTA);
+
+        btn_power_json.setBackgroundColor(Color.RED);
+
 
 
         btn_push_get.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +90,15 @@ public class PushAllActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PushAllActivity.this, PushJsonActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        btn_power_json.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PushAllActivity.this, PowerActivity.class);
                 startActivity(intent);
             }
         });

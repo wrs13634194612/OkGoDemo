@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1创建定时" />
+
+        <Button
+            android:id="@+id/btn_delete_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2删除时间" />
+
+        <Button
+            android:id="@+id/btn_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3创建倒计时" />
+
+        <Button
+            android:id="@+id/btn_brand_match"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4品牌匹配" />
+
+        <Button
+            android:id="@+id/btn_remote_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5编译遥控-确认" />
+
+        <Button
+            android:id="@+id/btn_all_remotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6查找所有遥控" />
+
+        <Button
+            android:id="@+id/btn_delete_remote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7删除遥控" />
+
+        <Button
+            android:id="@+id/btn_smart_match"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8智能匹配" />
+
+        <Button
+            android:id="@+id/btn_remote_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9遥控控制" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

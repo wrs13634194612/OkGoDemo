@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OkGoDemoTwo">
-        <activity android:name=".PushAllActivity">
+        <activity android:name="com.example.okgodemotwo.RemoteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -85,6 +85,27 @@
 
         <!--    7.power电量  DeviceVersionActivity   -->
         <activity android:name=".PowerActivity" />
+
+        <!--        遥控-->
+        <!--   查找所有遥控  -->
+        <activity android:name="com.example.okgodemotwo.remote.AllRemotesActivity" />
+        <!--   品牌匹配  -->
+        <activity android:name="com.example.okgodemotwo.remote.BrandMatchActivity" />
+        <!--   创建倒计时  -->
+        <activity android:name="com.example.okgodemotwo.remote.CountdownActivity" />
+        <!--   删除遥控  -->
+        <activity android:name="com.example.okgodemotwo.remote.DeleteRemoteActivity" />
+        <!-- 删除时间 -->
+        <activity android:name="com.example.okgodemotwo.remote.DeleteTimeActivity" />
+        <!--  编译遥控-确认    -->
+        <activity android:name="com.example.okgodemotwo.remote.RemoteConfirmActivity" />
+        <!--   遥控控制  -->
+        <activity android:name="com.example.okgodemotwo.remote.RemoteControlActivity" />
+        <!--   创建定时  -->
+        <activity android:name="com.example.okgodemotwo.remote.ScheduleActivity" />
+        <!--  智能匹配 遥控控制  -->
+        <activity android:name="com.example.okgodemotwo.remote.SmartMatchActivity" />
+
     </application>
 
 </manifest>
